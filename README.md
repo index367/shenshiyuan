@@ -1,6 +1,7 @@
 # Gg
-
+# 辣鸡儿的沈氏园项目
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+该项目由[Angular CLI](https://github.com/angular/angular-cli)V1.5.0自动生成
 
 ## Development server
 
