@@ -7,11 +7,11 @@ import { Yuyan } from './components/yuyan/yuyan.component';
 import { Wode } from './components/wode/wode.component';
 
 export const routeConfig: Routes = [
-    {
-        path: '',
-        redirectTo: 'shenyuan',
-        pathMatch: 'full'
-    },
+    // {
+    //     path: '',
+    //     redirectTo: 'shenyuan',
+    //     pathMatch: 'full'
+    // },
     {
         path: 'shenyuan',
         component: Shenyuan
@@ -27,6 +27,11 @@ export const routeConfig: Routes = [
     {
         path: 'wode',
         component: Wode
+    },
+    {
+        path: '**',
+        pathMatch: 'full',
+        redirectTo: 'shenyuan'
     }
 ];
 
