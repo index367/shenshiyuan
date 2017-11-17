@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { routeConfig } from './app.routing';
 
@@ -8,6 +9,8 @@ import { Shenyuan } from './components/shenyuan/shenyuan.component';
 import { Banbi } from './components/banbi/banbi.component';
 import { Yuyan } from './components/yuyan/yuyan.component';
 import { Wode } from './components/wode/wode.component';
+
+import { HttpService } from './http.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +22,10 @@ import { Wode } from './components/wode/wode.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot(routeConfig)
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

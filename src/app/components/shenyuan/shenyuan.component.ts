@@ -1,15 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { HttpService } from '../../http.service';
+
+interface Member {
+    id: string;
+    login: string;
+    avatar_url: string;
+}
 
 @Component({
     selector: 'ssy-shenyuan',
     templateUrl: './shenyuan.component.html',
-    styleUrls: ['./shenyuan.component.less', '../../style/common.less']
+    styleUrls: ['./shenyuan.component.less']
 })
 
-export class Shenyuan {
+export class Shenyuan implements OnInit {
     componentName: string;
 
-    constructor() {
+    member: Member[];
+
+    constructor(private httpService: HttpService) {
         this.componentName = 'shenyuan';
+    }
+
+    ngOnInit() {
+        this.httpService.getMembers()
+            .subscribe(data => {
+                if (data) {
+                    console.log('data:', data);
+                }
+            });
     }
 }
