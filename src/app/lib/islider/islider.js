@@ -545,3 +545,5 @@ iSlider.prototype.extend({
     }
 
 });
+
+module.exports = iSlider;

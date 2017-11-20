@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+const iSlider = require('../../lib/islider/islider.js');
 
 import { HttpService } from '../../http.service';
 
@@ -16,7 +17,7 @@ interface ImgItem {
 @Component({
     selector: 'ssy-shenyuan',
     templateUrl: './shenyuan.component.html',
-    styleUrls: ['./shenyuan.component.less']
+    styleUrls: ['./shenyuan.component.less', '../../lib/islider/islider.css']
 })
 
 export class Shenyuan implements OnInit {
@@ -63,7 +64,7 @@ export class Shenyuan implements OnInit {
                     console.log('data:', data);
                 }
             });
-        let islider = new iSlider({
+        const mySlider = new iSlider({
             data: this.imgList,
             dom: document.getElementById('animation-effect'),
             // isVertical: true,
