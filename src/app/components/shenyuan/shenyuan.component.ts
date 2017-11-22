@@ -3,10 +3,8 @@ const Swiper = require('../../lib/swiper/swiper.min.js');
 
 import { HttpService } from '../../http.service';
 
-interface Member {
-    id: string;
-    login: string;
-    avatar_url: string;
+interface Carousel {
+    url: string;
 }
 
 @Component({
@@ -18,7 +16,7 @@ interface Member {
 export class Shenyuan implements OnInit {
     componentName: string;
 
-    member: Member[];
+    carousel: Carousel[];
 
     constructor(private httpService: HttpService) {
         this.componentName = 'shenyuan';
@@ -32,8 +30,8 @@ export class Shenyuan implements OnInit {
                 }
             });
         const swiper = new Swiper('.swiper-container', {
-            // slidesPerView : 1,
-            centeredSlides : true
+            // slidesPerView : 3,
+            centeredSlides : true,
         });
     }
 }
