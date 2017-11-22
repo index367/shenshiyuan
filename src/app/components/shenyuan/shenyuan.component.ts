@@ -30,8 +30,9 @@ export class Shenyuan implements OnInit {
                 }
             });
         const swiper = new Swiper('.swiper-container', {
-            // slidesPerView : 3,
-            centeredSlides : true,
+            effect : 'coverflow',
+            slidesPerView: 1.4,
+            centeredSlides: true,
         });
     }
 }
