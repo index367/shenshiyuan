@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 const Swiper = require('../../lib/swiper/swiper.min.js');
 
 import { HttpService } from '../../http.service';
 
 interface Carousel {
-    url: string;
+    content: string;
 }
 
 @Component({
@@ -13,7 +13,7 @@ interface Carousel {
     styleUrls: ['./shenyuan.component.less', '../../lib/swiper/swiper.min.css']
 })
 
-export class Shenyuan implements OnInit {
+export class Shenyuan implements OnInit, AfterViewInit {
     componentName: string;
 
     carousel: Carousel[];
@@ -29,8 +29,18 @@ export class Shenyuan implements OnInit {
                     console.log('data:', data);
                 }
             });
+        this.carousel = [
+            {content: 'slide1'},
+            {content: 'slide2'},
+            {content: 'slide3'},
+            {content: 'slide4'},
+            {content: 'slide5'}
+        ];
+    }
+
+    ngAfterViewInit() {
         const swiper = new Swiper('.swiper-container', {
-            effect : 'coverflow',
+            // effect : 'coverflow',
             slidesPerView: 1.4,
             centeredSlides: true,
         });

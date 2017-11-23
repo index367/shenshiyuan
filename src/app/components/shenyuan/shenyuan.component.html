@@ -2,21 +2,9 @@
     <h2>{{componentName}}</h2>
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                slide1
-            </div>
-            <div class="swiper-slide">
-                slide2
-            </div>
-            <div class="swiper-slide">
-                slide3
-            </div>
-            <div class="swiper-slide">
-                slide4
-            </div>
-            <div class="swiper-slide">
-                slide5
+            <div class="swiper-slide" *ngFor="let slide of carousel;">
+                <p>{{slide.content}}</p>
             </div>
         </div>
-      </div>
+    </div>
 </div>
