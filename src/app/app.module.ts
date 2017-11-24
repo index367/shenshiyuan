@@ -11,6 +11,7 @@ import { Yuyan } from './components/yuyan/yuyan.component';
 import { Wode } from './components/wode/wode.component';
 
 import { HttpService } from './http.service';
+import { HttpInterceptorService } from './httpUtils.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { HttpService } from './http.service';
     HttpModule,
     RouterModule.forRoot(routeConfig)
   ],
-  providers: [HttpService],
+  providers: [HttpInterceptorService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

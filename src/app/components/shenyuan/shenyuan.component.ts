@@ -23,11 +23,9 @@ export class Shenyuan implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
-        this.httpService.getMembers()
-            .subscribe(data => {
-                if (data) {
-                    console.log('data:', data);
-                }
+        this.httpService.getMembers(1, 5)
+            .then(result => {
+                console.log(result);
             });
         this.carousel = [
             {content: 'slide1'},
