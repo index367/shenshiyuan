@@ -13,13 +13,16 @@ import { Wode } from './components/wode/wode.component';
 import { HttpService } from './http.service';
 import { HttpInterceptorService } from './httpUtils.service';
 
+import { GreenDirective } from './directive/green.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
     Shenyuan,
     Banbi,
     Yuyan,
-    Wode
+    Wode,
+    GreenDirective,
   ],
   imports: [
     BrowserModule,
