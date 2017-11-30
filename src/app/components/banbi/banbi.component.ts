@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewContainerRef, ViewChild, AfterViewInit } from '@angular/core';
 
 @Component({
     selector: 'ssy-banbi',
@@ -6,10 +6,19 @@ import { Component } from '@angular/core';
     styleUrls: ['./banbi.component.less']
 })
 
-export class Banbi {
+export class Banbi implements AfterViewInit {
     componentName: string;
+    condition: boolean;
 
-    constructor() {
+    @ViewChild('tpl')
+    tplRef: TemplateRef<any>;
+
+    constructor(private vcRef: ViewContainerRef) {
         this.componentName = 'banbi';
+        this.condition = false;
+    }
+
+    ngAfterViewInit() {
+        this.vcRef.createEmbeddedView(this.tplRef);
     }
 }

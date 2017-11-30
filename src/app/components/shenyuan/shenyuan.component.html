@@ -1,9 +1,13 @@
 <div class="shenyuan">
     <h2>{{componentName}}</h2>
-    <div class="swiper-container">
+    <div class="swiper-container" #swiperContainer>
         <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let slide of carousel;">
                 <p>{{slide.content}}</p>
+            </div>
+            <div class="swiper-slide last-slide">
+                <p>添加slide</p>
+                <a (click)="addSwiper()">append</a>
             </div>
         </div>
     </div>

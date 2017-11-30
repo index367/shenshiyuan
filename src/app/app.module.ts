@@ -13,7 +13,8 @@ import { Wode } from './components/wode/wode.component';
 import { HttpService } from './http.service';
 import { HttpInterceptorService } from './httpUtils.service';
 
-import { GreenDirective } from './directive/green.directive';
+import { GreetDirective } from './directive/greet.directive';
+import { UnlessDirective } from './directive/unless.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GreenDirective } from './directive/green.directive';
     Banbi,
     Yuyan,
     Wode,
-    GreenDirective,
+    GreetDirective,
+    UnlessDirective,
   ],
   imports: [
     BrowserModule,

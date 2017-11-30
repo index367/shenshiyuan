@@ -15,8 +15,8 @@ interface Carousel {
 
 export class Shenyuan implements OnInit, AfterViewInit {
     componentName: string;
-
     carousel: Carousel[];
+    itemCarousel: Carousel[];
 
     constructor(private httpService: HttpService) {
         this.componentName = 'shenyuan';
@@ -27,6 +27,13 @@ export class Shenyuan implements OnInit, AfterViewInit {
             .then(result => {
                 console.log(result);
             });
+        this.itemCarousel = [
+            {content: 'added_slide'},
+            {content: 'added_slide'},
+            {content: 'added_slide'},
+            {content: 'added_slide'},
+            {content: 'added_slide'}
+        ];
         this.carousel = [
             {content: 'slide1'},
             {content: 'slide2'},
@@ -37,10 +44,17 @@ export class Shenyuan implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        const swiper = new Swiper('.swiper-container', {
+        const shenyuan_swiper = new Swiper('.swiper-container', {
             // effect : 'coverflow',
             slidesPerView: 1.4,
             centeredSlides: true,
+            initialSlide: 0,
+            observer: true, // 修改swiper自己或子元素时，自动初始化swiper
+            observeParents: true, // 修改swiper的父元素时，自动初始化swiper
         });
+    }
+
+    addSwiper() {
+        this.carousel = this.carousel.concat(this.itemCarousel);
     }
 }

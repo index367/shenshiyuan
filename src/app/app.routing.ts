@@ -28,7 +28,7 @@ export const routeConfig: Routes = [
         path: 'wode',
         component: Wode
     },
-    {
+    {   // Ag路由使用先配置，先匹配的原则，重定向或者404放最后
         path: '**',
         pathMatch: 'full',
         redirectTo: 'shenyuan'

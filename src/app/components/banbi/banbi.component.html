@@ -1,4 +1,11 @@
-<h2>
-    {{componentName}}
-    <p green>high-light</p>
-</h2>
+<div>
+    <h2>{{componentName}}</h2>
+    <p [greet]="'RUA!'" author="367">directive click</p>
+    <ng-template #tpl>
+        ng-template
+    </ng-template>
+
+    <h2 *exeUnless="condition">unless directive</h2> 
+
+    <a [routerLink] = "['/yuyan']">yuyan</a>
+</div>
